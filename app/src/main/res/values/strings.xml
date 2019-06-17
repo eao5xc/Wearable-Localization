@@ -5,4 +5,10 @@
     values-round/strings.xml for round devices.
     -->
     <string name="hello_world">Hello Square World!</string>
+    <string name="welcome_click_here_to_start_localization_program">Welcome, Click Here to Start Localization Program</string>
+    <string name="click_here_to_start_localization_program">click_here_to_start_localization_program</string>
+    <string name="click_here_to_start_localization_program_II">Click Here To Start Localization Program</string>
+    <string name="click_to_start_localization_program">click to start localization program</string>
+    <string name="click_to_start_localization">Click to Start Localization</string>
+    <string name="Ranging">Ranging</string>
 </resources>
