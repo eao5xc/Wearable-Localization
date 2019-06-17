@@ -44,7 +44,7 @@ public class EstimoteService extends Service
     {
         Log.i("Estimote", "Starting Estimote Service");     // Logs on Console.
 
-        CheckFiles(); // Checks Files
+        CheckFiles();   // Checks Files
 
         super.onCreate();
         PowerManager powerManager = (PowerManager) getSystemService(POWER_SERVICE);
@@ -124,19 +124,6 @@ public class EstimoteService extends Service
         @Override
         public void run()
         {
-            File estimote = new File(Preference.Directory + SystemInformation.Estimote_Path);     // Gets the path to the Sensors from the system.
-            if (estimote.exists())      // If the file exists
-            {
-                Log.i("Estimote Sensor", "No Header Created");     // Logs to console
-            }
-            else        // If the file does not exist
-            {
-                Log.i("Estimote Sensor", "Creating Header");     // Logs on Console.
-
-                DataLogger dataLogger = new DataLogger(Subdirectory_Estimote, Estimote, Preference.Estimote_Data_Headers);        /* Logs the Sensors data in a csv format */
-                dataLogger.LogData();       // Saves the data to the directory.
-            }
-
             try
             {
                 String str = String.valueOf(buf);
@@ -164,13 +151,9 @@ public class EstimoteService extends Service
     {
         Log.i("Estimote", "Destroying Estimote Service");     // Logs on Console.
 
-        String data =  ("Estimote Service," + "is stopping ranging at," + SystemInformation.getTimeStamp());       // This is the format it is logged at.
-        DataLogger datalog = new DataLogger(Subdirectory_Estimote, Estimote, data);      // Logs it into a file called System Activity.
-        datalog.LogData();      // Saves the data into the directory.
-
-        super.onDestroy();
         beaconManager.stopRanging(region);
         stopForeground(true);
+        super.onDestroy();
     }
 
     @Override
