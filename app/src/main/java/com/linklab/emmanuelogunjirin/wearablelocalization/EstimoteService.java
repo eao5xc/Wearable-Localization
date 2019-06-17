@@ -55,6 +55,8 @@ public class EstimoteService extends Service
     @Override
     public int onStartCommand(Intent intent, int flags, int startId)
     {
+        CheckFiles();   // Checks Files
+
         eas = new ArrayList<>();
         strBuilder = new StringBuilder();
         beaconManager = new BeaconManager(this);

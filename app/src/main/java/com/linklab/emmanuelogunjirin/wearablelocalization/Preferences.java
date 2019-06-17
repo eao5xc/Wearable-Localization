@@ -22,5 +22,5 @@ public class Preferences        // System wide one stop place to set all setting
     public String Subdirectory_Estimote = "Estimote";      // This is where the estimote is kept
 
     /* Headers to individual files that are being logged to <--------------------------------------------- This is the order that the headers will appear in */
-    public String Estimote_Data_Headers = "Estimote ID, RSSI, Calculated Distance, Date --- Time";       // Column Headers for Estimote_Data
+    public String Estimote_Data_Headers = "Estimote ID, RSSI, Calculated Distance (Meters), Date --- Time";       // Column Headers for Estimote_Data
 }
