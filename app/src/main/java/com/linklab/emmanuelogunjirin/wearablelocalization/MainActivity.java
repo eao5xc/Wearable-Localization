@@ -180,11 +180,7 @@ public class MainActivity extends WearableActivity
         Log.i("Main Activity", "Checking Files");     // Logs on Console.
 
         File estimote = new File(Preferences.Directory + SystemInformation.Estimote_Path);     // Gets the path to the Sensors from the system.
-        if (estimote.exists())      // If the file exists
-        {
-            Log.i("Estimote Sensor", "No Header Created");     // Logs to console
-        }
-        else        // If the file does not exist
+        if (!estimote.exists())      // If the file exists
         {
             Log.i("Estimote Sensor", "Creating Header");     // Logs on Console.
 
